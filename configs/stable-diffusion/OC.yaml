@@ -78,26 +78,21 @@ data:
     train:
       target: ldm.data.simple.hf_dataset
       params:
-        name: lambdalabs/pokemon-blip-captions
+        name: N1ckQt/e926-character-portraits-captions
         image_transforms:
-        - target: torchvision.transforms.Resize
-          params:
-            size: 512
-            interpolation: 3
-        - target: torchvision.transforms.RandomCrop
-          params:
-            size: 512
         - target: torchvision.transforms.RandomHorizontalFlip
     validation:
       target: ldm.data.simple.TextOnly
       params:
         captions:
-        - "A pokemon with green eyes, large wings, and a hat"
-        - "A cute bunny rabbit"
-        - "Yoda"
-        - "An epic landscape photo of a mountain"
+        - "solo, anthro, male, piercing, teeth, smile, yellow markings, nose ring, blue eyes"
+        - "solo, anthro, spiked collar, black body"
+        - "happy, looking at viewer, spikes, blue tongue, horn, blurred background"
+        - "bandage, blonde hair, chibi, fangs, feathers, freckles, hair, open mouth, tank top, fangs, female, smile"
+        - "open smile, simple background, skull, skull head, smile, solo, tuft, white eyelashes, white eyes"
+        - "chest tuft, eyewear, facing forward, floppy disk, fur, glasses, item in mouth, male, multicolored body, orange body, orange fur, sharp teeth, smile, solo, sunglasses, synthwave, teeth, tuft"
         output_size: 512
-        n_gpus: 2 # small hack to sure we see all our samples
+        n_gpus: 1 # small hack to sure we see all our samples
 
 
 lightning:
